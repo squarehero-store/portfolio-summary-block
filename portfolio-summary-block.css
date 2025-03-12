@@ -1,0 +1,64 @@
+/* Limit placeholder items in edit mode */
+.sqs-is-page-editing .sqs-block-summary-v2 .summary-item-list > .summary-item:nth-child(n+4) {
+  display: none !important;
+}
+/* Hide placeholder blocks immediately */
+.sqs-block-summary-v2 .sqs-block-is-placeholder {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+.summary-block-collection-type-portfolio .preFade {
+  opacity: 1!important;
+}
+/* Loading container */
+.portfolio-adapter-loading {
+  position: relative;
+  min-height: 200px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+/* Loader overlay */
+.portfolio-adapter-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+}
+/* Spinner animation */
+.portfolio-adapter-loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #000;
+  animation: portfolio-adapter-spin 1s ease-in-out infinite;
+}
+@keyframes portfolio-adapter-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Hide images until fully loaded */
+.summary-thumbnail-image:not(.loaded) {
+  opacity: 0 !important;
+}
+/* Content visibility state classes */
+.portfolio-content-ready {
+  opacity: 1 !important;
+  transition: opacity 0.5s ease-in-out;
+}
+/* Item loading states */
+.portfolio-adapter-item-loading .summary-thumbnail-image {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.portfolio-adapter-item-ready .summary-thumbnail-image.loaded {
+  opacity: 1;
+}
